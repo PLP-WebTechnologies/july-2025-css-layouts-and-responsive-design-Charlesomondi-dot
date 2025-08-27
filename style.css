@@ -1,0 +1,151 @@
+/* style.css - Responsive layout using CSS Grid and Flexbox */
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  line-height: 1.6;
+}
+header {
+  background: #2d3e50;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+/* Navigation - Flexbox */
+nav {
+  background: #1abc9c;
+}
+.nav-list {
+  display: flex; /* Flexbox for nav alignment */
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem 0;
+}
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.nav-list li a:hover {
+  color: #222;
+}
+
+/* Main layout - Grid */
+.main-grid {
+  display: grid; /* CSS Grid for main layout */
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+.content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.sidebar {
+  background: #e9ecef;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.sidebar ul {
+  list-style: disc inside;
+  margin-top: 1rem;
+}
+
+/* Card container - Flexbox */
+.card-container {
+  display: flex; /* Flexbox for cards */
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.card {
+  background: #f1f1f1;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  padding: 1.5rem;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+}
+
+footer {
+  background: #2d3e50;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .sidebar {
+    margin-top: 1.5rem;
+  }
+  .card-container {
+    gap: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  .main-grid {
+    padding: 0 0.5rem;
+    margin: 1rem auto;
+  }
+  .content, .sidebar {
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+  .card-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .card {
+    min-width: 0;
+    max-width: 100%;
+    padding: 1rem;
+  }
+  nav .nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+/* Accessibility and clarity */
+@media (max-width: 400px) {
+  body {
+    font-size: 0.95rem;
+  }
+  header, footer {
+    font-size: 0.95rem;
+  }
+}
+
+/* End of style.css */
